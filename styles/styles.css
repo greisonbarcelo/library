@@ -32,3 +32,11 @@
 /* .title::after {
     content: "The wizard of oz";
 } */
+
+.addNewBook {
+    border-radius: 12px;
+    padding: 8px 12px;
+    color: white;
+    background-color: green;
+    font-weight: bolder;
+}
