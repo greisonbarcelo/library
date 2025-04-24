@@ -23,8 +23,8 @@ function addBookToLibrary(title, author, pages, status) {
   renderBook(myLibrary);
 }
 
-addBookToLibrary('SampleOne', 'a', '1', 'read');
-addBookToLibrary('SampleTwo', 'b', '2', 'read');
+addBookToLibrary('Harry Potter', 'JK Rowlong', '1657', 'Not read');
+addBookToLibrary('Game of Thrones', 'HBO', '2158', 'Read');
 
 
 console.log(myLibrary);
@@ -67,3 +67,27 @@ function createBookCard(book) {
   bookCardElement.appendChild(pStatus);
   bookCardElement.appendChild(pId);
 }
+
+
+// addBookToLibrary('SampleOne', 'a', '1', 'read');
+
+const title = document.querySelector("#form-title");
+const author = document.querySelector("#form-author");
+const pages = document.querySelector("#form-pages");
+const status = document.querySelector("#form-status");
+
+console.log(title.textContent);
+
+const form = document.querySelector("form");
+const formBtn = document.querySelector("form > button");
+
+formBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  // console.log(title.value);
+  newTitle = title.value;
+  newAuthor = author.value;
+  newPages = pages.value;
+  newStatus = status.value;
+  addBookToLibrary(newTitle, newAuthor, newPages, newStatus);
+  form.reset();
+});
