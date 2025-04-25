@@ -27,7 +27,7 @@ addBookToLibrary('Harry Potter', 'JK Rowlong', '1657', 'Not read');
 addBookToLibrary('Game of Thrones', 'HBO', '2158', 'Read');
 
 
-console.log(myLibrary);
+// console.log(myLibrary);
 
 function renderBook(arrayLibrary) {
   container.innerHTML = ''; // Clear existing content
@@ -59,7 +59,7 @@ function createBookCard(book) {
   pPages.textContent = book.pages;
   pStatus.textContent = book.status;
   pId.textContent = book.id;
-
+ 
   container.appendChild(bookCardElement);
   bookCardElement.appendChild(pTitle);
   bookCardElement.appendChild(pAuthor);
@@ -76,7 +76,6 @@ const author = document.querySelector("#form-author");
 const pages = document.querySelector("#form-pages");
 const status = document.querySelector("#form-status");
 
-console.log(title.textContent);
 
 const form = document.querySelector("form");
 const formBtn = document.querySelector("form > button");
