@@ -59,7 +59,7 @@ function createBookCard(book) {
   pPages.textContent = book.pages;
   pStatus.textContent = book.status;
   pId.textContent = book.id;
- 
+  
   container.appendChild(bookCardElement);
   bookCardElement.appendChild(pTitle);
   bookCardElement.appendChild(pAuthor);
