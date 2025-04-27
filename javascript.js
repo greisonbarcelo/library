@@ -67,6 +67,37 @@ function createBookCard(book) {
   bookCardElement.appendChild(pPages);
   bookCardElement.appendChild(pStatus);
   bookCardElement.appendChild(pId);
+
+  let toggleButton = document.createElement("button");
+toggleButton.setAttribute("class", "toggle-status");
+toggleButton.textContent = book.status === "Read" ? "Mark as Unread" : "Mark as Read";
+
+toggleButton.addEventListener("click", () => {
+    book.status = book.status === "Read" ? "Not Read" : "Read";
+    pStatus.textContent = book.status;
+    toggleButton.textContent = book.status === "Read" ? "Mark as Unread" : "Mark as Read";
+    toggleButton.classList.toggle("read", book.status === "Read");
+});
+
+let deleteButton = document.createElement("button");
+deleteButton.setAttribute("class", "delete-book");
+deleteButton.textContent = "Delete";
+
+deleteButton.addEventListener("click", () => {
+    let index = myLibrary.findIndex(b => b.id === book.id);
+    if (index !== -1) {
+        myLibrary.splice(index, 1); // Remove book from array
+        bookCardElement.remove(); // Remove from HTML view
+    }
+});
+
+let actionsContainer = document.createElement("div");
+actionsContainer.setAttribute("class", "book-actions");
+actionsContainer.appendChild(toggleButton);
+actionsContainer.appendChild(deleteButton);
+
+bookCardElement.appendChild(actionsContainer);
+
 }
 
 

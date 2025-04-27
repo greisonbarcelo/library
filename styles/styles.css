@@ -48,13 +48,48 @@
 .author::before {
     content: "by ";
 }
-.pages::before {
-    content: "pages ";
+.pages::after {
+    content: " pages";
 }
 .id::before {
     content: "ID: "
 }
 
+.book-actions {
+    display: flex;
+    justify-content: space-between; /* Align buttons inline */
+    margin-top: 10px;
+}
+
+.toggle-status, .delete-book {
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle-status {
+    background-color: #328E6E;
+    color: white;
+}
+
+.read {
+    background-color: #E1EEBC;
+    color: black;
+}
+
+.delete-book {
+    background-color: red;
+    color: white;
+}
+
+.book-header {
+    display: flex;
+    justify-content: space-between; /* Title left, pages right */
+    align-items: center;
+    margin-bottom: 8px; /* Optional: Adjust spacing */
+}
 
 /* body styling */
 
