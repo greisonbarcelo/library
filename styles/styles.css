@@ -169,7 +169,7 @@ a:link {
     flex-wrap: wrap; /* Prevent vertical stretching */
     align-items: center; /* Keep items at the top */
     justify-content: space-evenly;
-
+    padding-bottom: 74px;
 }
 
 
