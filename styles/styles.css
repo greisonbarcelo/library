@@ -50,7 +50,16 @@
 
 /* testing purposes height only */
 body {
-    height: 100vh;
+    /* height: 100vh; */
+}
+
+:root {
+    --nav-height: 60px; /* Adjust as needed */
+    --footer-height: 50px; /* Adjust as needed */
+}
+
+nav {
+    height: var(--nav-height);
 }
 
 nav > ul {
@@ -59,8 +68,8 @@ nav > ul {
     gap: 16px;
     padding: 12px;
     font-size: 1.2rem;
-    background-color: #2f3e46;
-    color: #cad2c5;
+    background-color: #edf2f4;
+    color: #2b2d42;
 }
 
 nav > ul > li {
@@ -79,7 +88,7 @@ nav > ul > li:nth-child(3) {
 
 a:link {
     text-decoration: none;
-    color: #cad2c5;
+    color: #2b2d42;
 }
 
 .logo > a > img{
@@ -94,7 +103,7 @@ a:link {
 .open-modal > button > img {
     width: 32px;
     height: auto;
-    background-color: #2f3e46;
+    background-color: #edf2f4;
 }
 .open-modal > button {
     background: none;
@@ -107,8 +116,29 @@ a:link {
 }
 
 
-.content-container {
-    background-color: #84a98c;
-    display: flex;
-    flex-direction: column;
+.container {
+    background-color: #8D99AE;
+    color: #2b2d42;
+    font-size: 1.2rem;
+    height: auto;
+    min-height: calc(100vh - var(--nav-height) - var(--footer-height));    display: flex;
+    padding: 12px;
+    flex-wrap: wrap; /* Prevent vertical stretching */
+    align-items: flex-start; /* Keep items at the top */
 }
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2B2D42;
+    color: #edf2f4;
+    text-align: center;
+    height: var(--footer-height);
+    padding-top: 16px;
+  }
+.footer > a {
+    color: #edf2f4;
+} 
