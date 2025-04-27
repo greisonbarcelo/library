@@ -41,7 +41,6 @@ function createBookCard(book) {
     let bookCardElement = document.createElement("div");
     bookCardElement.setAttribute("class", "book-card");
 
-    // Title & Pages aligned inline
     let bookHeader = document.createElement("div");
     bookHeader.setAttribute("class", "book-header");
 
@@ -57,7 +56,6 @@ function createBookCard(book) {
     bookHeader.appendChild(pPages);
     bookCardElement.appendChild(bookHeader);
 
-    // Author and status
     let pAuthor = document.createElement("p");
     pAuthor.setAttribute("class", "author");
     pAuthor.textContent = `by ${book.author}`;
@@ -66,19 +64,24 @@ function createBookCard(book) {
     pStatus.setAttribute("class", "status");
     pStatus.textContent = book.status;
 
-    // Toggle Read/Unread button
     let toggleButton = document.createElement("button");
     toggleButton.setAttribute("class", "toggle-status");
     toggleButton.textContent = book.status === "Read" ? "Mark as Unread" : "Mark as Read";
+
+    // **Apply correct color when book is created**
+    if (book.status === "Read") {
+        toggleButton.classList.add("read");
+    }
 
     toggleButton.addEventListener("click", () => {
         book.status = book.status === "Read" ? "Not Read" : "Read";
         pStatus.textContent = book.status;
         toggleButton.textContent = book.status === "Read" ? "Mark as Unread" : "Mark as Read";
+        
+        // **Update button color dynamically**
         toggleButton.classList.toggle("read", book.status === "Read");
     });
 
-    // Delete button
     let deleteButton = document.createElement("button");
     deleteButton.setAttribute("class", "delete-book");
     deleteButton.textContent = "Delete";
@@ -91,7 +94,6 @@ function createBookCard(book) {
         }
     });
 
-    // Container for inline buttons
     let actionsContainer = document.createElement("div");
     actionsContainer.setAttribute("class", "book-actions");
     actionsContainer.appendChild(toggleButton);
@@ -102,3 +104,60 @@ function createBookCard(book) {
     bookCardElement.appendChild(actionsContainer);
     container.appendChild(bookCardElement);
 }
+
+
+
+
+
+
+
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+    document.body.classList.add("modal-open"); // Disable scrolling
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+    document.body.classList.remove("modal-open"); // Enable scrolling
+};
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open"); // Enable scrolling
+    }
+};
+
+
+
+
+let form = document.querySelector("form");
+let addNewBook = document.querySelector(".addNewBook");
+let formTitle = document.querySelector("#form-title");
+let formAuthor = document.querySelector("#form-author");
+let formPages = document.querySelector("#form-pages");
+let formStatus = document.querySelector("#form-status"); // Correctly selecting checkbox
+
+addNewBook.addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    let readStatus = formStatus.checked ? "Read" : "Not Read"; // Correctly checks if it's checked
+    addBookToLibrary(formTitle.value, formAuthor.value, formPages.value, readStatus);
+    modal.style.display = "none";
+    form.reset();
+});
+
+

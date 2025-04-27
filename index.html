@@ -19,7 +19,35 @@
                 <a href="#">Library</a>
             </li>
             <li class="open-modal">
-                <button><img src="./img/plus-box.png" alt="Add book button"></button>
+                <button id="myBtn"><img src="./img/plus-box.png" alt="Add book button"></button>
+
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>New Book</p>
+                    <form>
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="form-title">
+                
+                        <label for="title">Author</label>
+                        <input type="text" name="author" id="form-author">
+                
+                        <label for="title">Pages</label>
+                        <input type="number" name="pages" id="form-pages">
+                
+                        <div class="read-container">
+                            <label for="form-status">Read</label>
+                            <input type="checkbox" name="status" id="form-status">
+                        </div>
+                        <button class="addNewBook">New Book</button>
+                    </form>
+                
+                </div>
+
+                
             </li>
         </ul>
     </nav>
