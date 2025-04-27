@@ -23,8 +23,8 @@ function addBookToLibrary(title, author, pages, status) {
   renderBook(myLibrary);
 }
 
-addBookToLibrary('Harry Potter', 'JK Rowlong', '1657', 'Not read');
-addBookToLibrary('Game of Thrones', 'HBO', '2158', 'Read');
+// addBookToLibrary('Harry Potter', 'JK Rowlong', '1657', 'Not read');
+// addBookToLibrary('Game of Thrones', 'HBO', '2158', 'Read');
 
 
 // console.log(myLibrary);
