@@ -59,9 +59,7 @@
 /* body styling */
 
 /* testing purposes height only */
-body {
-    /* height: 100vh; */
-}
+
 
 :root {
     --nav-height: 60px; /* Adjust as needed */
