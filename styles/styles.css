@@ -29,6 +29,10 @@
     font-size: 12px;
     margin: 5px 0;
 }
+.pages, .id {
+    font-size: .8rem;
+    color: #8D99AE;
+}
 
 .addNewBook {
     border-radius: 12px;
@@ -41,9 +45,15 @@
     /* justify-content: center; */
     align-self: center;
 }
-
-
-
+.author::before {
+    content: "by ";
+}
+.pages::before {
+    content: "pages ";
+}
+.id::before {
+    content: "ID: "
+}
 
 
 /* body styling */
@@ -114,7 +124,6 @@ a:link {
 	cursor: pointer;
 	outline: inherit;
 }
-
 
 .container {
     background-color: #8D99AE;
